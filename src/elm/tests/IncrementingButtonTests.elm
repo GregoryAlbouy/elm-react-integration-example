@@ -9,9 +9,14 @@ import Test exposing (Test, describe, test)
 suite : Test
 suite =
     describe "IncrementingButton"
-        [ test "initial state is 0" <|
-            expectContent "Clicked 0 times" IncrementingButton.view
+        [ testInitialState
         ]
+
+
+testInitialState : Test
+testInitialState =
+    test "initial state is 0" <|
+        expectContent "Clicked 0 times" IncrementingButton.view
 
 
 expectContent : String -> Html msg -> () -> Expectation
