@@ -1,11 +1,5 @@
-import { useState } from "react";
+import wrap from "@elm-react/component";
 
-export const IncrementingButton = () => {
-  const [count, setCount] = useState(0);
+import ElmIncrementingButton from "../../elm/src/IncrementingButton.elm";
 
-  const incrementCount = () => {
-    setCount((previousCount) => previousCount + 1);
-  };
-
-  return <button onClick={incrementCount}>Clicked {count} times</button>;
-};
+export const IncrementingButton = wrap(ElmIncrementingButton);
