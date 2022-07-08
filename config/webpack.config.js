@@ -346,7 +346,7 @@ module.exports = function (webpackEnv) {
           test: elmRegex,
           exclude: [/elm-stuff/, /node_modules/],
           use: {
-            loader: "elm-webpack-loader",
+            loader: require.resolve("elm-webpack-loader"),
             options: {
               optimize: isEnvProduction,
             },
@@ -566,7 +566,13 @@ module.exports = function (webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/^$/, /\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [
+                /^$/,
+                /\.(js|mjs|jsx|ts|tsx)$/,
+                /\.html$/,
+                /\.json$/,
+                elmRegex,
+              ],
               type: "asset/resource",
             },
             // ** STOP ** Are you adding a new loader?
