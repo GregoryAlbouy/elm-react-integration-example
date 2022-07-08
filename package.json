@@ -39,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "elm": "^0.19.1-5",
+    "elm-test": "^0.19.1-revision9"
   }
 }
