@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:react": "react-scripts test",
+    "test:elm": "elm-test './src/elm/tests/**/*Tests.elm'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
